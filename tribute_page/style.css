@@ -1,0 +1,471 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --top-color: rgba(0, 0, 0, 0.4);
+  --bottom-color: rgba(0, 0, 0, 0.4);
+  --bg-dark: linear-gradient(var(--top-color), var(--bottom-color));
+  --bg-hover: linear-gradient(rgba(0, 47, 168, 0.8), rgba(0, 47, 168, 0.8));
+  --text-translate: translateY(40%);
+  --hover-fontsize: 16px;
+  --hover-fontsize-sm: 11px;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #777;
+  background-color: #eee;
+}
+
+#main {
+  overflow-x: hidden;
+  overflow-y: auto;
+  perspective: 2px;
+  height: 100vh;
+  position: relative;
+}
+
+.header {
+  font-family: "Cinzel", serif;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.parallax::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateZ(-1px) scale(1.5);
+  z-index: -1;
+  background-image: url(bg.jpg);
+  background-size:100%;
+}
+
+.text-box {
+  background-color: #fff;
+  color: #002fa7;
+  padding: 0 2.5em 0 2.5em;
+  text-align: center;
+}
+
+#title {
+  text-transform: uppercase;
+  font-size: 60px;
+  letter-spacing: 25px;
+  margin-right: -25px;
+}
+
+.text-box:hover {
+  background-color: #002fa7;
+  box-shadow: 6px 8px 25px 1px rgba(0, 0, 0, 0.35);
+  outline: 2px solid #fff;
+  outline-offset: -2px;
+}
+
+.text-box:hover > #title {
+  transform: scale(0.8);
+  transition: 1s all linear;
+  color: #fff;
+}
+
+.middle-section {
+  background: #f9f8eb;
+  position: relative;
+  min-height: 30vh;
+}
+
+.quote-container {
+  font-size: 25px;
+  padding: 150px 100px;
+  margin: 5px 0;
+  letter-spacing: 1.5px;
+  text-align: center;
+}
+
+.quote-resize {
+  margin: 0 auto;
+  width: 80%;
+}
+
+.timeline-container {
+  position: relative;
+  text-align: center;
+  margin: 30px 0;
+  padding: 30px;
+  width: 100%;
+}
+
+.timeline-heading {
+  position: relative;
+  font-size: 30px;
+  text-transform: uppercase;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.grid-center {
+  margin: 50px auto;
+  padding: 10px;
+}
+
+.grid-contain {
+  display: grid;
+  grid-template: repeat(3, minmax(300px, 2fr)) / repeat(
+      auto-fit,
+      minmax(400px, 1fr)
+    );
+  grid-gap: 10px;
+  text-align: center;
+}
+
+.grid {
+  background: var(--bg-dark);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid:hover > .year::after {
+  font-size: var(--hover-fontsize);
+  font-weight: normal;
+  display: block;
+  margin: 0 auto;
+  transform: var(--text-translate);
+  width: 80%;
+}
+
+.year {
+  font-size: 50px;
+  color: #eee;
+}
+
+.content1 {
+  background: var(--bg-dark),
+    url(child.png)
+      no-repeat center;
+  background-size: cover;
+}
+
+.content1:hover {
+  background: var(--bg-hover),
+    url(child.png)
+      center;
+  background-size: 120%;
+  align-items: start;
+}
+
+.content1:hover > .year::after {
+  content: "Virat Kohli was born on 5 November 1988 in Delhi into a Punjabi Hindu family";
+}
+
+.content2 {
+  background: var(--bg-dark),
+    url(vir.02.jpg)
+      no-repeat center;
+  background-size: cover;
+}
+
+.content2:hover {
+  background: var(--bg-hover),
+    url(vir.02.jpg)
+      center;
+  background-size: 120%;
+  align-items: start;
+}
+
+.content2:hover > .year::after {
+  content: "In October, 13-year-old Virat is called up to the Delhi Under-15 team for the Polly Umrigar Trophy. He finishes the season as Delhi’s top scorer.";
+}
+
+.content3 {
+  background: var(--bg-dark),
+    url(virat06.jpg)
+      no-repeat center;
+  background-size:contain;
+}
+
+.content3:hover {
+  background: var(--bg-hover),
+    url(virat06.jpg)
+    no-repeat center;
+  background-size: contain;
+  align-items: start;
+}
+
+.content3:hover > .year::after {
+  content: " After impressing at the youth level for Delhi, Virat is selected for the India Under-19 team for the first time and has a glorious tour of England, averaging over a hundred in the one-day series.";
+}
+
+.content4 {
+    background: var(--bg-dark),
+    url(viru08.jpg)
+      no-repeat center;
+  background-size:contain;
+}
+
+.content4:hover {
+    background: var(--bg-hover),
+    url(viru08.jpg)
+      center;
+  background-size: contain;
+  align-items: start;
+}
+
+.content4:hover > .year::after {
+  content: "In 2008 , he led the Indian team to victory at the 2008 ICC Under-19 Cricket World Cup held in Malaysia. ";
+}
+
+.content5 {
+  background: var(--bg-dark),
+    url(viruu11.jpg)
+      no-repeat center;
+  background-size: cover;
+}
+
+.content5:hover {
+  background: var(--bg-hover),
+    url(viruu11.jpg)
+      center;
+  background-size: 120%;
+  align-items: start;
+}
+
+.content5:hover > .year::after {
+  content: "Virat played every single match of India’s successful 2011 World Cup campaign, making his only century in the first game of the tournament against Bangladesh. ";
+}
+
+.content6 {
+  background: var(--bg-dark),
+    url(viruu12.jpg)
+      no-repeat center;
+  background-size: cover;
+}
+
+.content6:hover {
+  background: var(--bg-hover),
+    url(viruu12.jpg)
+      center;
+  background-size: 120%;
+  align-items: start;
+}
+
+.content6:hover > .year::after {
+  content: "Kohli scored his first test hundred in rather spectacular circumstances in the fourth and final test against Australia at Adelaide, narrowly surviving getting run out when batting with Ishant Sharma, almost running out of partners as well.";
+}
+
+.content7 {
+  background: var(--bg-dark),
+    url(viruu14.jpg)
+      no-repeat center;
+  background-size: cover;
+}
+
+.content7:hover {
+  background: var(--bg-hover),
+    url(viruu14.jpg)
+      center;
+  background-size: 120%;
+  align-items: start;
+}
+
+.content7:hover > .year::after {
+  content: "Kohli got his first taste of Test captaincy when he was once again asked to step in for an injured MS in Australia, and celebrated by scoring a century in both innings in Adelaide. In what was a memorable";
+}
+
+.content8 {
+  background: var(--bg-dark),
+    url(viruu16.jpg)
+      no-repeat center;
+  background-size: cover;
+}
+
+.content8:hover {
+  background: var(--bg-hover),
+    url(viruu16.jpg)
+      center;
+  background-size: 120%;
+  align-items: start;
+}
+
+.content8:hover > .year::after {
+  content: "Virat Kohli was the standout performer in the ICC T20 World Cup held in India. He scored 273 runs at an average of 136.50, including a memorable 82* against Australia in the quarter-finals, earning him the Player of the Tournament award.";
+}
+
+.content9 {
+  background: var(--bg-dark),
+    url(viruu18.jpg)
+      no-repeat center;
+  background-size: cover;
+}
+
+.content9:hover {
+  background: var(--bg-hover),
+    url(viruu18.jpg)
+      center;
+  background-size: 120%;
+  align-items: start;
+}
+
+.content9:hover > .year::after {
+  content: "Under Kohli's captaincy, India won their first-ever Test series in Australia. Kohli led from the front, scoring a crucial century in Perth.";
+}
+
+.bottom-section {
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 2.5rem;
+}
+
+#quote-bottom {
+  margin: -200px 0;
+  background: var(--bg-dark),
+    url(viruu.jpg)
+      no-repeat top / cover;
+  background-attachment: fixed;
+}
+
+#qb-resize {
+  color: #eee;
+  width: 60%;
+  padding: 40px;
+  outline: 2px solid #eee;
+  outline-offset: -2px;
+}
+
+.learn-container {
+  padding: 150px 100px;
+  text-align: center;
+  margin: 300px 0;
+}
+
+.learn-text {
+  letter-spacing: 1.5px;
+  font-size: 25px;
+  text-align: center;
+  display: block;
+  font-size: 30px;
+}
+
+.learn-primary {
+  display: block;
+  font-size: 30px;
+}
+
+#tribute-link {
+  text-decoration: none;
+  color: #0000ff;
+}
+
+#img-div {
+  padding: 10px;
+  text-align: center;
+}
+
+#image {
+  max-width: 150px;
+  display: block;
+  margin: 0 auto;
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 8rem;
+  background-color: #002fa7;
+  padding: 40px 30px;
+  text-align: center;
+  color: #eee;
+}
+
+.ak {
+  display: block;
+}
+
+@media (max-width: 330px) {
+  .grid-contain {
+    grid-template: repeat(12, minmax(200px, 2fr)) / repeat(
+        auto-fit,
+        minmax(200px, 1fr)
+      );
+  }
+
+  .grid:hover > .year::after {
+    font-size: 9px;
+  }
+
+  .quote-resize {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  #qb-resize {
+    width: 150%;
+    margin-left: -20%;
+  }
+
+  .learn-container {
+    margin-left: -25%;
+  }
+
+  .learn-text {
+    font-size: 18px;
+    transform: translateX(20%);
+  }
+}
+
+@media (max-width: 500px) {
+  .grid-contain {
+    grid-template: repeat(12, minmax(200px, 2fr)) / repeat(
+        auto-fit,
+        minmax(300px, 1fr)
+      );
+  }
+
+  .grid:hover > .year::after {
+    font-size: var(--hover-fontsize-sm);
+  }
+
+  .quote-resize {
+    width: 95%;
+  }
+
+  #qb-resize {
+    width: 95%;
+  }
+
+  .learn-text {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 905px) and (min-width: 500px) {
+  .grid-contain {
+    grid-template: repeat(12, minmax(300px, 1fr)) / repeat(
+        auto-fit,
+        minmax(400px, 1fr)
+      );
+  }
+}
+
+@media (max-width: 1725px) and (min-width: 1315px) {
+  .grid-contain {
+    grid-template: repeat(4, minmax(300px, 1fr)) / repeat(
+        auto-fit,
+        minmax(400px, 1fr)
+      );
+  }
+}
+
+
